@@ -7,13 +7,13 @@ pipeline {
     }
 
     environment {
-        AWS_DEFAULT_REGION = 'ap-south-1'  // AWS region for your VPC
+        AZURE_LOCATION = "East US"
     }
 
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                git 'https://github.com/pmathpal1/aws-vpc-code.git'
+                git 'git@github.com:pmathpal1/repo121.git'
             }
         }
 
@@ -35,3 +35,5 @@ pipeline {
                 sh 'terraform apply -auto-approve'  // Apply the configuration automatically
             }
         }
+    }
+}
