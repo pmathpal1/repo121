@@ -22,7 +22,7 @@ resource "azurerm_subnet" "subnets" {
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = var.subnet[count.index].name
   address_prefixes     = [var.subnet[count.index].address_prefix]
-  depends_on = [  
+  depends_on = [
     azurerm_virtual_network.vnet
   ]
 }
